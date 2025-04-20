@@ -1,0 +1,170 @@
+<div class="card flex justify-center">
+  <p-button label="Check" />
+</div>
+
+<div class="check">
+  <p-checkbox [(ngModel)]="checked" [binary]="true"></p-checkbox>
+</div>
+
+<!-- <div class="card">
+  <form class="flex items-center gap-1" [formGroup]="formGroup">
+    <p-checkbox formControlName="city" value="New York" inputId="ny">
+    </p-checkbox>
+    <label for="ny" class="ml-2">New York</label>
+  </form>
+</div> -->
+
+<!-- checkbox -->
+<div class="card flex justify-center">
+  <div class="flex flex-col gap-4">
+    <div *ngFor="let category of categories" class="flex items-center">
+      <p-checkbox
+        [inputId]="category.key"
+        name="group"
+        [value]="category"
+        [(ngModel)]="selectedCategories"
+      />
+      <label [for]="category.key" class="ml-2"> {{ category.name }} </label>
+    </div>
+  </div>
+</div>
+
+<!-- datepicker -->
+<div class="date">
+  <p-datepicker [(ngModel)]="date"></p-datepicker>
+</div>
+
+<div class="card flex justify-center">
+  <p-slider [(ngModel)]="value" styleClass="w-56" />
+</div>
+
+<!-- pie chart -->
+<!-- <div class="card">
+  <p-chart type="bar" [data]="basicData" [options]="basicOptions" />
+</div> -->
+
+<div class="card flex justify-center">
+  <p-rating [(ngModel)]="value" />
+</div>
+
+<div class="card flex justify-center">
+  <textarea rows="5" cols="30" pTextarea [autoResize]="true"></textarea>
+</div>
+
+<div class="card">
+  <p-timeline [value]="events">
+    <ng-template #opposite let-event>
+      <small class="text-surface-500 dark:text-surface-400">{{
+        event.date
+      }}</small>
+    </ng-template>
+    <ng-template #content let-event>
+      {{ event.status }}
+    </ng-template>
+  </p-timeline>
+</div>
+
+<!-- Automatic Focus -->
+<div class="card flex justify-center">
+  <input
+    type="text"
+    pInputText
+    [pAutoFocus]="true"
+    placeholder="Automatically focused"
+  />
+</div>
+
+<!-- block and unblock ui  -->
+
+<div class="card">
+  <p-button label="Block" (click)="blockedPanel = true" />
+  <p-button label="Unblock" (click)="blockedPanel = false" />
+  <p-blockui [target]="pnl" [blocked]="blockedPanel" />
+  <p-panel #pnl header="Header" styleClass="mt-6">
+    <p class="m-0">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+  </p-panel>
+</div>
+
+<!-- Radio button  -->
+
+<div class="card flex justify-center">
+  <div class="flex flex-wrap gap-4">
+    <div class="flex items-center">
+      <p-radiobutton
+        name="pizza"
+        value="Cheese"
+        [(ngModel)]="ingredient"
+        inputId="ingredient1"
+      />
+      <label for="ingredient1" class="ml-2">Cheese</label>
+    </div>
+
+    <div class="flex items-center">
+      <p-radiobutton
+        name="pizza"
+        value="Mushroom"
+        [(ngModel)]="ingredient"
+        inputId="ingredient2"
+      />
+      <label for="ingredient2" class="ml-2">Mushroom</label>
+    </div>
+
+    <div class="flex items-center">
+      <p-radiobutton
+        name="pizza"
+        value="Pepper"
+        [(ngModel)]="ingredient"
+        inputId="ingredient3"
+      />
+      <label for="ingredient3" class="ml-2">Pepper</label>
+    </div>
+
+    <div class="flex items-center">
+      <p-radiobutton
+        name="pizza"
+        value="Onion"
+        [(ngModel)]="ingredient"
+        inputId="ingredient4"
+      />
+      <label for="ingredient4" class="ml-2">Onion</label>
+    </div>
+  </div>
+</div>
+
+<!-- select in a group -->
+
+<div class="card flex justify-center">
+  <p-select
+    [options]="groupedCities"
+    [(ngModel)]="selectedCity"
+    placeholder="Select a City"
+    [group]="true"
+    class="w-full md:w-56"
+  >
+    <ng-template let-group #group>
+      <div class="flex items-center">
+        <img
+          src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+          [class]="'mr-2 flag flag-' + group.value"
+          style="width: 20px"
+        />
+        <span>{{ group.label }}</span>
+      </div>
+    </ng-template>
+  </p-select>
+</div>
+
+<div class="card flex items-center gap-2 flex-wrap">
+  <p-chip label="Apple" icon="pi pi-apple" />
+  <p-chip label="Facebook" icon="pi pi-facebook" />
+  <p-chip label="Google" icon="pi pi-google" />
+  <p-chip label="Microsoft" icon="pi pi-microsoft" [removable]="true" />
+</div>

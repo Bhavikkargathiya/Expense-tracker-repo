@@ -1,0 +1,83 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.input-container{
+  position: relative;
+}
+.input-i{
+  padding-left: 35px;
+}
+
+.user-logo {
+  position: absolute;
+  left: 4%;
+  top: 30px;
+  transform: translateY(-50%);
+  color: gray;
+  // font-size: 16px;
+  pointer-events: none;
+}
+.email-logo{
+  position: absolute;
+    left: 4%;
+    top: 30px;
+    transform: translateY(-50%);
+    color: gray;
+    pointer-events: none;
+}
+.error {
+  margin-bottom: 8px;
+ 
+  &.error span{
+    color: red;
+  }
+  .error p{
+    color: red;
+  }
+}
+
+.text-custom {
+  font-size: 1.8rem;
+  padding-top: 20px;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.password-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.radio-group {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+  gap: 30px;
+  & label {
+    color: rgb(126, 123, 123);
+    font-size: 1.8rem;
+  }
+
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  margin-top: 17px;
+}

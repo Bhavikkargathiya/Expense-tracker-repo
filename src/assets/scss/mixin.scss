@@ -1,0 +1,17 @@
+@mixin set-font($size, $weight, $height, $spacing: normal, $color: null) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  letter-spacing: $spacing;
+  color: $color;
+}
+
+@mixin item-align(
+  $displayValue,
+  $justifyContent: flex-start,
+  $alignItem: center
+) {
+  display: $displayValue;
+  justify-content: $justifyContent;
+  align-items: $alignItem;
+}

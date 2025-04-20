@@ -1,0 +1,42 @@
+<div class="edit-user">
+  <h2 class="edit-user-title">{{ isEdit ? "Edit Expense" : "Add Expense" }}</h2>
+  <form (ngSubmit)="saveExpense()" class="edit-user-form">
+    <div class="form-group">
+      <input
+        class="from-input"
+        type="text"
+        [(ngModel)]="expense.amount"
+        placeholder="Amount"
+        name="amount"
+        required
+      />
+    </div>
+    <input
+      class="from-input"
+      type="text"
+      [(ngModel)]="expense.category"
+      placeholder="Category"
+      name="category"
+      required
+    />
+    <input
+      class="from-input"
+      type="date"
+      [(ngModel)]="expense.date"
+      name="date"
+      required
+    />
+    <input
+      class="from-input"
+      type="text"
+      [(ngModel)]="expense.description"
+      placeholder="Description"
+      name="description"
+      required
+    />
+
+    <button class="btn btn-blue" type="submit">
+      {{ isEdit ? "Update Expense" : "Add Expense" }}
+    </button>
+  </form>
+</div>

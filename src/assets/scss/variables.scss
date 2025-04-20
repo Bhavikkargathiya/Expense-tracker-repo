@@ -1,0 +1,151 @@
+/*** Mixins for media queries ****/
+@mixin for-md-lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin for-xs-sm {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+@mixin for-sm {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+@mixin for-xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+/*** Mixins for media queries ****/
+[class*='ico'] {
+  background-repeat: no-repeat;
+}
+:root {
+  --Poppins: Poppins;
+  --Poppins-Regular: Poppins-Regular;
+  --Poppins-Black: Poppins-Black;
+  --Poppins-SemiBold: Poppins-SemiBold;
+  --Poppins-Bold: Poppins-Bold;
+  --Poppins-Medium: Poppins-Medium;
+  --Poppins-Light: Poppins-Light;
+  --Poppins-Italic: Poppins-Italic;
+  --Nunito-Regular: Nunito-Regular;
+  --Nunito-Light: Nunito-Light;
+  --Nunito-SemiBold: Nunito-SemiBold;
+  --Nunito-Bold: Nunito-Bold;
+  --Nunito-italic: Nunito-italic;
+  --Nunito-Light: Nunito-Light;
+  --Nunito-Black: Nunito-Black;
+  // Global fonts Ends
+  --white: #ffffff;
+  --border-color: #eeeeee;
+  --gradient: #e1eaf7;
+  --link-color: #b0b0b1;
+  --blue: #5890ff;
+  --bluehover: #6db1ff;
+  --blue-active: #5a89e6;
+  --darkblue: #202b5d;
+  --darkblue-hover: #0f1a4c;
+  --black: #000000;
+  --bodycolor: #616870;
+  --darkgrey: #343434;
+  --card-border: #e5e5e5;
+  --input-color: #efecec;
+  --upload: #e9f7ff;
+  --upload-border: #349fe2;
+  --upload-text: #122247;
+  --upload-bg: #e9f7ff;
+  --checkbox: #d6d6d6;
+  --toggle-border: #7682b5;
+  --orange: #fbf2eb;
+  --orangehover: #f99744;
+  --popup-text: #5e626a;
+  --black-shadow: #000000a1;
+  --seperator: #e1e1e1;
+  --dash-card: #e4e4e4;
+  --strong: #1b1c21;
+  --subtitle: #8e8e8e;
+  --payment-border: #e1e1e4;
+  --input-bg: #f8f8f8;
+  --input-border: #efefef;
+  --profile-link: #656060;
+  --link-blue: #1846fb;
+  --para-color: #63718d;
+  --number: #828080;
+  --overlay: #f1f3f6;
+  --light-blue: #e9f1ff;
+  --bg-color: #f8f9f9;
+  --magenta: #3fd4df;
+  --light-grey: #acacac;
+  --input-email: #e9e9e9;
+  --input-email-color: #919191;
+  --timeline-border: #e7e7e9;
+  --timeline-shadow: #484848;
+  --pack-title: #242120;
+  --para-text: #b5bfd2;
+  --darkbluehover: #67e7ef;
+  --light-magenta: #9bffe7;
+  --progress-shade: #14cfc3;
+  --card-border: #dedede;
+  --card-tag-color: #3b456e;
+  --card-description-color: #777777;
+  --card-light: #b1b0b0;
+  --form-label: #232323;
+  --required: #ff0000;
+  --dark-red: #650315;
+  --paragraph-light: #d1d1d1;
+  --newsletter-para: #707070;
+  --signup-border: #e3e3e3;
+  --footer-bg: #112976;
+  --para-light: #828282;
+  --information-background: #ecf0f1;
+  --information-color: #607d8b;
+  --grey-section: #f1f2f6;
+  --light-blue-shade: #ebf3ff;
+  --section-bg: #f2f5ff;
+  --table-th: #f4f6fb;
+  --table-green: #e0eee2;
+  --table-yellow: #fff4e2;
+  --table-red: #f8d7d7;
+  // Dashboard Section
+  --tag-color: #f0f4fe;
+  --yellow-shade: #e99b35;
+  --message-green: #008000;
+  --green: #37c35d;
+  --second-light-grey: #b4b4b4;
+  --disable-btn: #eef2fb;
+  --disable-btn-hover: #e6ebf6;
+  --disable-btn-text: #95a0b4;
+  --toaster-success-bg: #c6f2c6;
+  --toaster-success-border-color: #51a351;
+  --toaster-error-bg: #fdd5d3;
+  --toaster-error-border-color: #bd3730;
+  --toaster-warning-bg: #ffe3bf;
+  --toaster-warning-border-color: #f1a238;
+  --title-color: #1d1d1d;
+  --bg-grey: #f5f5f5;
+  --grey-font: #5e5e5e;
+  --round-btn-bg-grey: #f1f1f1;
+  --light-blue-bg: #f3f7ff;
+  --light-blue-border: #d1e0ff;
+  --light-orange: #fff8e6;
+  --light-oragne-border: #f5eacb;
+  --blue-box-shadow: rgba(77, 147, 240, 0.36);
+  --card-box-shadow: rgba(19, 105, 94, 0.07);
+  --second-green: #15cf8f;
+  --reject: #ce4a4a;
+  --dashboard-gradient-blue: #5558ff;
+  --dashboard-gradient-sky-blue: #3fd4df;
+  --table-header: #555e7d;
+  --transaction-blue: #3e38c5;
+  --dashboard-bg: #f1f9ff;
+  --bg-blue-btn: #eaeff9;
+  --stake-btn: #d5dce9;
+  --notes-red: #f31313;
+  --success-notes-bg: #e4f6f0;
+  --warning-notes-bg: #fff3f3;
+  --project-bg: #eff3fb;
+}

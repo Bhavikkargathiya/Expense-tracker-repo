@@ -1,0 +1,108 @@
+<form
+  class="form-wrapper"
+  [formGroup]="registerForm"
+  (ngSubmit)="registerUser()"
+>
+  <h1 class="heading" [ngStyle]="{ color: 'green' }">Register</h1>
+  <div class="input-container">
+    <input
+      class="ui-text input-text text-custom input-i"
+      type="text"
+      placeholder=" Enter Your Username"
+      formControlName="name"
+    />
+    <i class="fa-solid fa-user user-logo"></i>
+    <div
+      *ngIf="
+        registerForm.controls['name'].invalid &&
+        registerForm.controls['name'].touched
+      "
+      class="error"
+    >
+      <span *ngIf="registerForm.controls['name'].errors?.['required']"
+        >⚠ Username is required!</span
+      >
+      <span *ngIf="registerForm.controls['name'].errors?.['minlength']"
+        >⚠ Must be at least 3 characters!</span
+      >
+      <span *ngIf="registerForm.controls['name'].errors?.['pattern']"
+        >⚠ Only alphabets allowed!</span
+      >
+    </div>
+  </div>
+  <div class="input-container">
+    <input
+      class="ui-text input-text text-custom input-i"
+      type="email"
+      placeholder=" Enter Your Email"
+      formControlName="email"
+    />
+    <i class="fa-solid fa-at email-logo"></i>
+    <div
+      *ngIf="
+        registerForm.controls['email'].invalid &&
+        registerForm.controls['email'].touched
+      "
+      class="error"
+    >
+      <span *ngIf="registerForm.controls['email'].errors?.['required']">
+        ⚠ Email is required!
+      </span>
+      <span *ngIf="registerForm.controls['email'].errors?.['email']">
+        ⚠ Enter a valid email address!
+      </span>
+    </div>
+  </div>
+
+  <div class="password-container">
+    <input
+      class="ui-text input-text text-custom"
+      type="password"
+      name="password"
+      placeholder="Enter Your Password"
+      formControlName="password"
+      [type]="showPassword ? 'text' : 'password'"
+    />
+    <span class="toggle-icon" (click)="togglePassword()">
+      {{ showPassword ? "👁️" : "🔒" }}
+    </span>
+    <div
+      *ngIf="
+        registerForm.controls['password'].invalid &&
+        registerForm.controls['password'].touched
+      "
+      class="error"
+    >
+      <span *ngIf="registerForm.controls['password'].errors?.['required']"
+        >⚠ Password is required!
+      </span>
+      <span *ngIf="registerForm.controls['password'].errors?.['minlength']"
+        >⚠ Password must be at least 12 characters long!</span
+      >
+      <span *ngIf="registerForm.controls['password'].errors?.['maxlength']"
+        >⚠ Password must be at most 15 characters long!</span
+      >
+    </div>
+  </div>
+  <div class="radio-group">
+    <label>
+      <input type="radio" formControlName="gender" value="male" /> Male
+    </label>
+    <label>
+      <input type="radio" formControlName="gender" value="female" /> Female
+    </label>
+  </div>
+  <div
+    *ngIf="
+      registerForm.controls['gender'].invalid &&
+      registerForm.controls['gender'].touched
+    "
+    class="error"
+  >
+    <span *ngIf="registerForm.controls['gender'].errors?.['required']"
+      >⚠ Please select your gender!</span
+    >
+  </div>
+
+  <button class="btn btn-blue btn-large">Register</button>
+</form>

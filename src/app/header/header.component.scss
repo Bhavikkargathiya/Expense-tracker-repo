@@ -1,0 +1,97 @@
+.header-container {
+  margin-top: 10px;
+
+  .logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 35px;
+  }
+  .logo-left{
+    display: flex;
+    gap: 5px;
+
+    .img-logo{
+      width: 55px;
+      height: 55px;
+      margin-top: -10px;
+    }
+  }
+  .logo-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  }
+  .logo-name {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+    font-weight: bold;
+    font-size: 18px; 
+    line-height: 1.2;
+  }
+  .logo-top {
+    font-size: 15px; 
+  }
+  
+  .logo-bottom {
+    font-size: 20px; 
+  }
+  .logo-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  
+    }
+    .vertical-dots {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; 
+      height: 40px; 
+      border-radius: 8px; 
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+.vertical-dots:hover .icon-box {
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fdfdfd;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   z-index: 10;
+   
+  }
+  .vertical-dots:hover .dropdown-content {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  .custom-i{
+    margin-right: 5px;
+  }
+  }
+  

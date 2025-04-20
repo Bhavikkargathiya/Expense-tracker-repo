@@ -1,0 +1,51 @@
+<div class="header-container">
+  <div class="logo-container">
+    <div class="logo-left">
+      <img
+        src="/images/icons8-expense-100.png"
+        alt="Expense Tracker"
+        class="img-logo"
+      />
+      <div class="logo-name">
+        <span class="logo-top">Zoho</span>
+        <span class="logo-bottom">Expense</span>
+      </div>
+    </div>
+    <div class="logo-right">
+      <div class="card">
+        <div class="flex flex-wrap gap-8">
+          <div class="flex-auto">
+            <p-avatar
+              image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+              class="mr-2"
+              size="xlarge"
+              shape="circle"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="vertical-dots">
+        <div class="icon-box">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div class="dropdown-content">
+          <a routerLink="/expense"
+            ><i class="fa-solid fa-pen-fancy custom-i"></i>Product Blogs</a
+          >
+          <a routerLink="expense-form"
+            ><i class="fa-solid fa-user-plus custom-i"></i>Add user</a
+          >
+          <a (click)="logout()"
+            ><i class="fa-solid fa-circle-user custom-i"></i>Logout</a
+          >
+          <a routerLink="expense-chart"
+            ><i class="fa-solid fa-chart-pie custom-i"></i>User chart</a
+          >
+          <a routerLink="frequently"
+            ><i class="fa-solid fa-message custom-i"></i>FAQs</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

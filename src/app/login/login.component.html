@@ -1,0 +1,70 @@
+<form class="form-wrapper" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <h1 class="heading" [ngStyle]="{ color: 'blue' }">{{ form }}</h1>
+  <div>
+    <div class="input-container">
+      <input
+        class="ui-text input-text text-custom input-i"
+        type="email"
+        name="email"
+        placeholder="Enter Your Email"
+        formControlName="email"
+      />
+      <i class="fa-solid fa-at email-logo"></i>
+      <div
+        *ngIf="
+          loginForm.controls['email'].invalid &&
+          loginForm.controls['email'].touched
+        "
+        class="error"
+      >
+        <span *ngIf="loginForm.controls['email'].errors?.['required']"
+          >⚠ Email is required!</span
+        >
+        <span *ngIf="loginForm.controls['email'].errors?.['email']">
+          ⚠ Enter a valid email address!</span
+        >
+      </div>
+    </div>
+    <div class="password-container">
+      <input
+        class="ui-text input-text text-custom"
+        type="password"
+        name="password"
+        placeholder="Enter Your Password"
+        formControlName="password"
+        [type]="showPassword ? 'text' : 'password'"
+      />
+      <span class="toggle-icon" (click)="togglePassword()">
+        {{ showPassword ? "👁️" : "🔒" }}
+      </span>
+      <div
+        *ngIf="
+          loginForm.controls['password'].invalid &&
+          loginForm.controls['password'].touched
+        "
+        class="error"
+      >
+        <span *ngIf="loginForm.controls['password'].errors?.['required']"
+          >⚠ Password is required!
+        </span>
+        <span *ngIf="loginForm.controls['password'].errors?.['minlength']"
+          >⚠ Password must be at least 12 characters long!</span
+        >
+        <span *ngIf="loginForm.controls['password'].errors?.['maxlength']"
+          >⚠ Password must be at most 17 characters long!</span
+        >
+      </div>
+    </div>
+    <button
+      [disabled]="loginForm.invalid"
+      class="btn btn-large btn-blue full text-area"
+    >
+      <div *ngIf="isloading" class="spin-load">
+        <div class="spinner-loader small"></div>
+      </div>
+      <span *ngIf="!isloading">Login</span>
+    </button>
+
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </div>
+</form>

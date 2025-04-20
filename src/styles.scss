@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  background-color: #f6f6f6;
+  color: #000000;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+
+
+@import 'assets/scss/reset.scss';
+@import 'assets/scss/variables.scss';
+@import 'assets/scss/components.scss';
+@import 'assets/scss/main.scss';
+@import 'assets/scss/media-queries.scss';
