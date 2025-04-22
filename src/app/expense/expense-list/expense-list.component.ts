@@ -60,6 +60,7 @@ export class ExpenseListComponent implements OnInit {
   }
 
   filterExpenses() {
+    console.log('Selected Category:', this.selectedCategory);
     if (!this.selectedCategory) {
       this.loadExpenses();
     } else {
@@ -67,7 +68,7 @@ export class ExpenseListComponent implements OnInit {
         this.selectedCategory
       ).subscribe({
         next: (data) => {
-          console.log('Filtered Data list:', data);
+          console.log('Filtered Data:', data);
           this.expenses = data;
         },
         error: (err) => {
